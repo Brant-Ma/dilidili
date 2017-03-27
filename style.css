@@ -1,0 +1,111 @@
+/* 通用全局 */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+}
+body {
+	background-color: #fafafa;
+}
+/* 通用组件 */
+button {
+	background-color: #fff;
+	color: #42a7e7;
+	border: 1px solid #42a7e7;
+	cursor: pointer;
+}
+input:focus,
+button:focus {
+	outline: none;
+}
+/* 头部 */
+.header {
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+	padding: 10px 20px;
+	outline: 1px solid #ccc;
+	background-color: #fff;
+}
+.header button,
+.header input {
+	float: right;
+	height: 30px;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+.header button {
+	width: 40px;
+}
+.header button:hover,
+.header button.today {
+	background-color: #42a7e7;
+	color: #fff;
+	border: 1px solid #fff;
+}
+.header button.today {
+	cursor: not-allowed;
+}
+.header input {
+	width: 140px;
+	padding: 10px;
+	margin-right: 10px;
+	border: 1px solid #ccc;
+}
+/* 列表 */
+.list {
+	max-width: 90%;
+	padding: 70px 20px 20px;
+	margin: 0 auto;
+	background-color: #fafafa;
+}
+.list .timestamp {
+	color: #42a7e7;
+	margin-top: 1.5rem;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+.list .item {
+	position: relative;
+	margin: 10px 0;
+	padding: 0.75rem;
+	padding-right: 40px;
+	border: 1px solid #eee;
+	width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	background-color: #fff;
+}
+/* 时间戳 */
+.timestamp span {
+	font-size: 1.25rem;
+}
+.timestamp button {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+.timestamp button:first-of-type {
+	float: left;
+}
+.timestamp button:last-of-type {
+	float: right;
+}
+.timestamp button:disabled {
+	border-color: #ccc;
+	color: #ccc;
+	cursor: not-allowed;
+}
+/* 条目 */
+.item a {
+	line-height: 1.75;
+	text-decoration: none;
+	color: #333;
+}
+.item a:hover {
+	color: #42a7e7;
+}

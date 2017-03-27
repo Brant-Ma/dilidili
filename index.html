@@ -1,0 +1,30 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>嘀哩嘀哩 - 知乎日报 web 版</title>
+	<link rel="icon" type="image/png" href="http://7brant.me/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+</head>
+<body>
+	<div id="dldl">
+		<div class="header">
+			<img src="./logo.png" width="100" height="50">
+			<button @click="getLatest" :class="{today: noMore}">今</button>
+			<input type="text" placeholder="输入 8 位时间戳" v-model.trim="pick" maxlength="8"@keyup.enter="getHistory(pick, 1)">
+		</div>
+		<div class="list">
+			<div class="timestamp">
+				<button @click="getHistory(date, 0)">&lt;</button>
+				<span>{{dateFormat}}</span>
+				<button :disabled="noMore" @click="getHistory(date, 2)">&gt;</button>
+			</div>
+			<div class="item" v-for="story in stories">
+				<a :href="urlBase + story.id" target="_blank">{{story.title}}</a>
+			</div> 
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
